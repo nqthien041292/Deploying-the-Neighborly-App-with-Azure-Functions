@@ -25,7 +25,7 @@ jobs:
         uses: actions/setup-python@v1
         with:
           python-version: ${{ env.PYTHON_VERSION }}
-          
+
       - name: Goto source folder
         run: |
           cd NeighborlyAPI
@@ -35,10 +35,11 @@ jobs:
           python -m venv venv
           source venv/bin/activate
 
+      - name: Upgrade pip
+        run: python -m pip install --upgrade pip
+
       - name: Install dependencies
         run: pip install -r requirements.txt
-
-      # Optional: Add step to run tests here
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
@@ -69,6 +70,6 @@ jobs:
           app-name: 'developerproject2function'
           slot-name: 'production'
           package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
-          publish-profile: ${{ secrets.AzureAppService_PublishProfile_5f9cad359d1f43a9aae6f00a9ede4077 }}
+          publish-profile: ${{ secrets.AzureAppService_PublishProfile_a525674b4d204cd49e207a6b29e371ee }}
           scm-do-build-during-deployment: true
           enable-oryx-build: true
