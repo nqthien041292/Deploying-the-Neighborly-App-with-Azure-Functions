@@ -1,15 +1,19 @@
 import azure.functions as func
 import pymongo
+import os
+import json
+from bson.json_util import dumps
 
 def main(req: func.HttpRequest) -> func.HttpResponse:
-
+   
     request = req.get_json()
 
     if request:
         try:
-            url = "localhost"  # TODO: Update with appropriate MongoDB connection information
+            #url = "localhost"  # TODO: Update with appropriate MongoDB connection information
+            url = os.environ["myAzureCosmosMongoDBConnectionString"]
             client = pymongo.MongoClient(url)
-            database = client['azure']
+            database = client['lab2db']
             collection = database['advertisements']
 
             rec_id1 = collection.insert_one(eval(request))

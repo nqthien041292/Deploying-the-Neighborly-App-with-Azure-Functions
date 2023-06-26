@@ -1,7 +1,9 @@
 import azure.functions as func
 import pymongo
 from bson.objectid import ObjectId
-
+import os
+import json
+from bson.json_util import dumps
 
 def main(req: func.HttpRequest) -> func.HttpResponse:
 
@@ -9,13 +11,15 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 
     if id:
         try:
-            url = "localhost"  # TODO: Update with appropriate MongoDB connection information
+            #url = "localhost"  # TODO: Update with appropriate MongoDB connection information
+            url = os.environ["myAzureCosmosMongoDBConnectionString"]
             client = pymongo.MongoClient(url)
-            database = client['azure']
+            database = client['lab2db']
             collection = database['advertisements']
             
             query = {'_id': ObjectId(id)}
             result = collection.delete_one(query)
+            
             return func.HttpResponse("")
 
         except:

@@ -1,7 +1,12 @@
 {
-  "IsEncrypted": true,
-  "Values": {
-    "FUNCTIONS_WORKER_RUNTIME": "CfDJ8KvJ6DmYyMJCgkPKMHi9yggxobSNL+EiBudqjTbkN08MV8FPGx7WqKyJXi1vK5/3O48YnxQvGjJtBiH2gbzh8qUxrA2On+1JRf1xQeWwdKwATocSwT1CMT9SN2gtzXs0ZQ=="
+  "IsEncrypted": false,
+  "Values": {   
+    "FUNCTIONS_EXTENSION_VERSION": "~3",
+    "myAzureCosmosMongoDBConnectionString": "<INSERT VALUE HERE>", 
+    "FUNCTIONS_WORKER_RUNTIME": "python",
+    "AzureWebJobsStorage": "DefaultEndpointsProtocol=https;AccountName=<YOUR ACCOUNT NAME>;AccountKey=<YOUR ACCOUNT KEY>",
+    "AzureWebJobs.MyHTTPFunction.Disabled": "true",
+    "SendGridAPI": "<YOUR ACCESS KEY>" 
   },
   "ConnectionStrings": {},
 
