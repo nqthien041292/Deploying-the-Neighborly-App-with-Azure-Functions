@@ -8,18 +8,18 @@ from bson.objectid import ObjectId
 
 
 def main(req: func.HttpRequest) -> func.HttpResponse:
-    
+
     logging.info('Python HTTP trigger function processed a request.')
 
     try:
- 
+
         request = req.get_json()
         if request:
             try:
                 # add your connection string here
                 url = os.environ["myAzureCosmosMongoDBConnectionString"]
                 client = pymongo.MongoClient(url)
-                database = client['lab2db']
+                database = client['developerproject2mongo']
                 collection = database['notes']
 
                 # replace the insert_one variable with what you think should be in the bracket

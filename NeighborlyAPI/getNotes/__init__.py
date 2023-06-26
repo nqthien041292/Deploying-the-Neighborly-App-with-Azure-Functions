@@ -12,14 +12,14 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 
         url = os.environ["myAzureCosmosMongoDBConnectionString"]
         client = pymongo.MongoClient(url)
-        database = client['lab2db']
+        database = client['developerproject2mongo']
         collection = database['notes']
 
         result = collection.find({})
         result = dumps(result)
-       
+
         return func.HttpResponse(result, mimetype="application/json", charset="utf-8", status_code=200)
 
     except:
             return func.HttpResponse("Bad Request", status_code=400)
-   
+

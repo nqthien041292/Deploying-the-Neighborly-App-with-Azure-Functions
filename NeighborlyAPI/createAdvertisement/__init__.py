@@ -5,7 +5,7 @@ import json
 from bson.json_util import dumps
 
 def main(req: func.HttpRequest) -> func.HttpResponse:
-   
+
     request = req.get_json()
 
     if request:
@@ -13,7 +13,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
             #url = "localhost"  # TODO: Update with appropriate MongoDB connection information
             url = os.environ["myAzureCosmosMongoDBConnectionString"]
             client = pymongo.MongoClient(url)
-            database = client['lab2db']
+            database = client['developerproject2mongo']
             collection = database['advertisements']
 
             rec_id1 = collection.insert_one(eval(request))

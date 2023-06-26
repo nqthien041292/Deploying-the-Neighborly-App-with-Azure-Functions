@@ -16,19 +16,19 @@ http://localhost:8080/
 
 ## Azure Container Registry
 
-Example Azure Container Registry Name: appregistrykwest
+Example Azure Container Registry Name: appregistry
 
 ### Login
 
 docker login
 
-az acr login --name appregistrykwest
+az acr login --name appregistry
 
 ### Tagging 
-docker tag neighborly-api appregistrykwest.azurecr.io/neighborly-api
+docker tag neighborly-api appregistry.azurecr.io/neighborly-api
 
 ### Push
-docker push appregistrykwest.azurecr.io/neighborly-api
+docker push appregistry.azurecr.io/neighborly-api
 
 ## Kubernetes
 
@@ -40,13 +40,13 @@ az aks get-credentials --name azure-functions-cluster --resource-group udacitypr
 
 ### Authenticate with Azure Container Registry from Azure Kubernetes Service
 
-Example Azure Container Registry Name: appregistrykwest
+Example Azure Container Registry Name: appregistry
 
 This is a very important step!
 
 https://docs.microsoft.com/en-us/azure/aks/cluster-container-registry-integration
 
-az aks update -n azure-functions-cluster -g udacitypractice --attach-acr appregistrykwest
+az aks update -n azure-functions-cluster -g udacitypractice --attach-acr appregistry
 
 ### Install
 
@@ -56,8 +56,8 @@ func kubernetes install --namespace keda
 
 See instructions how to make your own deploy.yml file in the main repo README
 
-func kubernetes deploy --name azure-functions-cluster --image-name appregistrykwest.azurecr.io/neighborly-api --dry-run > deploy.yml
+func kubernetes deploy --name azure-functions-cluster --image-name appregistry.azurecr.io/neighborly-api --dry-run > deploy.yml
 
-func kubernetes deploy --name azure-functions-cluster --image-name appregistrykwest.azurecr.io/neighborly-api —polling-interval 3 —cooldown-period 5
+func kubernetes deploy --name azure-functions-cluster --image-name appregistry.azurecr.io/neighborly-api —polling-interval 3 —cooldown-period 5
 
 kubectl apply -f deploy.yml

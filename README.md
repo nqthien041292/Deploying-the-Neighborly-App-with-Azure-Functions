@@ -4,7 +4,7 @@
 
 For the final project, we are going to build an app called "Neighborly". Neighborly is a Python Flask-powered web application that allows neighbors to post advertisements for services and products they can offer.
 
-The Neighborly project is comprised of a front-end application that is built with the Python Flask micro framework. The application allows the user to view, create, edit, and delete the community advertisements.
+The Neighborly project is composed of a front-end application that is built with the Python Flask micro framework. The application allows the user to view, create, edit, and delete the community advertisements.
 
 The application makes direct requests to the back-end API endpoints. These are endpoints that we will also build for the server-side of the application.
 
@@ -50,10 +50,10 @@ We need to set up the Azure resource group, region, storage account, and an app 
    - Note that app names need to be unique across all of Azure.
    - Make sure it is a Linux app, with a Python runtime.
 
-    Example of successful output, if creating the app `myneighborlyapiv1`:
+    Example of successful output, if creating the app `developerproject2function`:
 
     ```bash
-    Your Linux function app 'myneighborlyapiv1', that uses a consumption plan has been successfully created but is not active until content is published using Azure Portal or the Functions Core Tools.
+    Your Linux function app 'developerproject2function', that uses a consumption plan has been successfully created but is not active until content is published using Azure Portal or the Functions Core Tools.
     ```
 
 4. Set up a Cosmos DB Account. You will need to use the same resource group, region and storage account, but can name the Cosmos DB account as you prefer. **Note:** This step may take a little while to complete (15-20 minutes in some cases).

@@ -14,7 +14,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
         #url = "localhost"  # TODO: Update with appropriate MongoDB connection information
         url = os.environ["myAzureCosmosMongoDBConnectionString"]
         client = pymongo.MongoClient(url)
-        database = client['lab2db']
+        database = client['developerproject2mongo']
         collection = database['posts']
 
         result = collection.find({})

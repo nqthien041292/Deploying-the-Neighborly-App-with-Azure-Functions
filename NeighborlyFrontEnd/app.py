@@ -46,13 +46,13 @@ def rss():
     fg = FeedGenerator()
     fg.title('Feed title')
     fg.description('Feed Description')
-    fg.link(href='https://neighborly-client-v1.azurewebsites.net/')
-    
+    fg.link(href='https://developerproject2function.azurewebsites.net/')
+
 
     response = requests.get(settings.API_URL + '/getAdvertisements')
     ads = response.json()
 
-    for a in ads: 
+    for a in ads:
         fe = fg.add_entry()
         fe.title(a.title)
         fe.description(a.description)
@@ -132,7 +132,7 @@ def delete_ad_request(id):
 # running app
 def main():
     print(' ----->>>> Flask Python Application running in development server')
-    #app.run(host=settings.SERVER_HOST, port=settings.SERVER_PORT, debug=settings.FLASK_DEBUG)    
+    #app.run(host=settings.SERVER_HOST, port=settings.SERVER_PORT, debug=settings.FLASK_DEBUG)
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
