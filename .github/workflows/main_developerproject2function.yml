@@ -67,7 +67,7 @@ jobs:
         uses: Azure/functions-action@v1
         id: deploy-to-function
         with:
-          app-name: 'developerproject2function'
+          app-name: 'python-app'
           slot-name: 'production'
           package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
           publish-profile: ${{ secrets.AzureAppService_PublishProfile_a525674b4d204cd49e207a6b29e371ee }}
