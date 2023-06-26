@@ -70,6 +70,6 @@ jobs:
           app-name: 'python-app'
           slot-name: 'production'
           package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
-          publish-profile: ${{ secrets.AzureAppService_PublishProfile_a525674b4d204cd49e207a6b29e371ee }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_BCC54C40255E48228CD7261F36224550 }}
           scm-do-build-during-deployment: true
           enable-oryx-build: true
