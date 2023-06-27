@@ -1,8 +1,7 @@
 import azure.functions as func
-import pymongo
-import os
-import json
-from bson.json_util import dumps
+
+import unit_of_work
+
 
 def main(req: func.HttpRequest) -> func.HttpResponse:
 
@@ -10,22 +9,15 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 
     if request:
         try:
-            #url = "localhost"  # TODO: Update with appropriate MongoDB connection information
-            url = os.environ["myAzureCosmosMongoDBConnectionString"]
-            client = pymongo.MongoClient(url)
-            database = client['developerproject2mongo']
-            collection = database['advertisements']
-
-            rec_id1 = collection.insert_one(eval(request))
+            uow = unit_of_work.MongoUnitOfWork()
+            collection_name = "advertisements"
+            rec_id1 = uow.insert_one(collection_name, request)
 
             return func.HttpResponse(req.get_body())
 
         except ValueError:
             print("could not connect to mongodb")
-            return func.HttpResponse('Could not connect to mongodb', status_code=500)
+            return func.HttpResponse("Could not connect to mongodb", status_code=500)
 
     else:
-        return func.HttpResponse(
-            "Please pass name in the body",
-            status_code=400
-        )
+        return func.HttpResponse("Please pass name in the body", status_code=400)

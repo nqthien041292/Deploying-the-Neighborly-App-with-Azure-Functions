@@ -1,5 +1,5 @@
 #--------- Flask settings
-SERVER_HOST = '0.0.0.0'
+SERVER_HOST = '0.0.0.0' # Update this for the appropriate front-end website when up
 SERVER_PORT = 5000
 FLASK_DEBUG = True # Do not use debug mode in prod
 
@@ -11,4 +11,14 @@ RESTPLUS_404_HELP = True
 API_VERSION = 'v1'
 
 #-------- Azure constants
-API_URL = "https://developerproject2function.azurewebsites.net/api"
+
+# API_URL format: "https://[FUNCTION_APP_NAME_GOES_HERE].azurewebsites.net"
+API_URL = "https://neighborlyfunc.azurewebsites.net/api"
+
+#API_URL = "https://neighborlyfunctionapp1.azurewebsites.net/api/"
+
+# for local host if Azure functions served locally
+#API_URL = "http://localhost:7071/api"
+#docker run -p 8080:80 -it neighborlyregistery.azurecr.io/neighborly-api:V1
+#kubectl config get-contexts
+#az aks check-acr -n $AKS_CLUSTER -g $RESOURCE_GROUP --acr $REGISTRY_SERVER

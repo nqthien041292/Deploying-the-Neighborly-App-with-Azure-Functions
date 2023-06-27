@@ -1,26 +1,17 @@
 import azure.functions as func
-import pymongo
-import json
-import logging
-import os
 from bson.json_util import dumps
 
+import unit_of_work
+
+
 def main(req: func.HttpRequest) -> func.HttpResponse:
-
     try:
+        uow = unit_of_work.MongoUnitOfWork()
+        collection = uow.get_all("advertisements")
 
-        #url = "localhost"  # TODO: Update with appropriate MongoDB connection information
-        url = os.environ["myAzureCosmosMongoDBConnectionString"]
-        client = pymongo.MongoClient(url)
-        database = client['developerproject2mongo']
-        collection = database['advertisements']
+        result = dumps(collection)
 
-        result = collection.find({})
-        result = dumps(result)
-
-        return func.HttpResponse(result, mimetype="application/json", charset='utf-8')
+        return func.HttpResponse(result, mimetype="application/json", charset="utf-8")
     except:
         print("could not connect to mongodb")
-        return func.HttpResponse("could not connect to mongodb",
-                                 status_code=400)
-
+        return func.HttpResponse("could not connect to mongodb", status_code=400)
