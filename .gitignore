@@ -1,3 +1,4 @@
 local.settings.json
 .venv
 /.idea
+/NeighborlyAPI/.idea/
