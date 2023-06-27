@@ -32,10 +32,7 @@ jobs:
           source venv/bin/activate
 
       - name: Install dependencies
-        run: |
-          cd NeighborlyAPI
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
+        run: pip install -r requirements.txt
         
       # Optional: Add step to run tests here
 
@@ -68,6 +65,6 @@ jobs:
           app-name: 'developerproject2function'
           slot-name: 'Production'
           package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_48FF859185774843933EB4D5B8B0EC86 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_FEA3787E82F9412D85B8A9F06E959942 }}
           scm-do-build-during-deployment: true
           enable-oryx-build: true
