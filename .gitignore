@@ -2,3 +2,6 @@ local.settings.json
 .venv
 /.idea
 /NeighborlyAPI/.idea/
+/.python_packages
+/NeighborlyAPI/.idea
+/NeighborlyFrontEnd/.python_packages
