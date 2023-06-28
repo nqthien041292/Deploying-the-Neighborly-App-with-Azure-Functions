@@ -5,3 +5,7 @@ local.settings.json
 /.python_packages
 /NeighborlyAPI/.idea
 /NeighborlyFrontEnd/.python_packages
+/NeighborlyFrontEnd/.azure
+/NeighborlyFrontEnd/.idea
+/NeighborlyFrontEnd/__pycache__
+/NeighborlyAPI/.vscode
