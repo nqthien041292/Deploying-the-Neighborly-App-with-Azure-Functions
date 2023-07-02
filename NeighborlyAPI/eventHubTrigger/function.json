@@ -5,8 +5,8 @@
       "type": "eventGridTrigger",
       "name": "event",
       "direction": "in",
-	  "eventHubName": "neighborly-hub", 
-	  "connection": "EventHubConnString"
+	  "eventHubName": "developerproject2eventhubspace",
+	  "connection": "Endpoint=sb://developerproject2eventhubspace.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=ikK8ieOfLDLPDZBHdEpLqTYBSU8dXBwiN+AEhFFoMNI="
     }
   ]
 }
