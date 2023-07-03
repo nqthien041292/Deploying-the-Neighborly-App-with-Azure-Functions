@@ -6,7 +6,7 @@
       "name": "event",
       "direction": "in",
 	  "eventHubName": "developerproject2eventhubspace",
-	  "connection": "Endpoint=sb://developerproject2eventhubspace.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=ikK8ieOfLDLPDZBHdEpLqTYBSU8dXBwiN+AEhFFoMNI="
+	  "connection": "Endpoint=sb://developerproject2eventhubspace.servicebus.windows.net/;SharedAccessKeyName=developerproject2eventhubrule;SharedAccessKey=KWDorJPlK4GYTHxU+miif51Gl7Uh00Vtu+AEhGX8Xnc=;EntityPath=developerproject2eventhub"
     }
   ]
 }
